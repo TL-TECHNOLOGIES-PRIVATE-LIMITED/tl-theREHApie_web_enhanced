@@ -107,7 +107,7 @@ export const FooterThree = () => {
                               {organizationDetails.email }
                             </a>
                             <a href={`tel:${organizationDetails.phone || ''}`}>
-                              {organizationDetails.phone}
+                              +{organizationDetails.phone}
                             </a>
                           </>
                         )}
@@ -126,7 +126,7 @@ export const FooterThree = () => {
                       <div className="td-footer-3-link">
                         <ul>
                           {organizationDetails?.location ? (
-                            organizationDetails.location.split(',').map((line, index) => (
+                            organizationDetails.location.replace(/\\n/g, '\n').split('\n').map((line, index) => (
                               <li key={index}>
                                 <a className="td-footer-3-link">
                                   {line.trim()}
