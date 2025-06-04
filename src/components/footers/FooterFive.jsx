@@ -58,7 +58,7 @@ export const FooterFive = () => {
                         </a>
                       </li>
                       <li className="mb-20">
-                        <a href={`tel:${phone?.replace(/\s/g, '')}`}>{phone}</a>
+                        <a href={`tel:${phone?.replace(/\s/g, '')}`}>+{phone}</a>
                       </li>
                       {orgLoading ? (
                         <li>
@@ -69,7 +69,7 @@ export const FooterFive = () => {
                           <a className="td-footer-3-link">Error loading address information</a>
                         </li>
                       ) : address ? (
-                        address.split(',').map((line, index) => (
+                        address.replace(/\\n/g, '\n').split('\n').map((line, index) => (
                           <li key={index}>
                             <a className="td-footer-3-link">
                               {line.trim()}

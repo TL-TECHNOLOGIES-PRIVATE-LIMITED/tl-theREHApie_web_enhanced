@@ -104,7 +104,7 @@ export const  ContactFour = ({emailaddress,phone,address,orgLoading,orgError}) =
                                 </a>
                               </li>
                             ) : address ? (
-                              address.split(',').map((line, index) => (
+                              address.replace(/\\n/g, '\n').split('\n').map((line, index) => (
                                 <li key={index}>
                                   <a className="td-contact-4-email" href="#map">
                                     {line.trim()}
@@ -147,7 +147,7 @@ export const  ContactFour = ({emailaddress,phone,address,orgLoading,orgError}) =
                                 rel="noreferrer"
 
                               >
-                                {phone}
+                                +{phone}
                               </a>
                             </li>
                             <li>
