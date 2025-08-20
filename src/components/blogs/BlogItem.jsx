@@ -9,7 +9,8 @@ export const BlogItem = ({
   userImage,
   author,
   date,
-  id
+  id,
+  excerpt
   // likes,
   // shares,
 }) => {
@@ -27,15 +28,22 @@ export const BlogItem = ({
         </h2>
 
         <div className="td-postbox-text mb-3">
-          <p>{description}</p>
+          <p>{excerpt}</p>
         </div>
 
         <div className="td-postbox-meta d-flex justify-content-between align-items-center">
           <div className="td-postbox-user d-flex align-items-center">
-            <a href="#" className="text-decoration-none text-muted">
-              By <span>{author}</span>
-            </a>
-          </div>
+  <a href="#" className="text-decoration-none text-muted d-flex align-items-center">
+    <img 
+      src="/favicon.png" 
+      alt={author} 
+      className="me-2 rounded-circle" 
+      style={{ width: "24px", height: "24px", objectFit: "cover" }} 
+    />
+    By <span className="ms-1">{author}</span>
+  </a>
+</div>
+
 
           <div className="td-postbox-meta-here">
             <span className="text-muted">
